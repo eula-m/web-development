@@ -52,12 +52,57 @@
 
     <!-- ROW 2 -->
     <div class="row">
+      <!-- ACTIVITY 1 -->
       <div class="col-6 col-md-3 p-1">
         <div class="card bg-white border border-2 border-secondary-subtle rounded-4 p-4 py-5 h-100">
           <h5 class="fw-bold text-secondary-emphasis">Activity 1</h5>
-          <p class="small text-secondary mb-0">Lorem ipsum.</p>
+          <p class="small text-secondary mb-2">Bento layout.</p>
+
+          <div class="dropdown">
+            <button class="btn btn-sm btn-outline-secondary rounded-pill dropdown-toggle"
+                    type="button"
+                    data-bs-toggle="dropdown"
+                    data-bs-auto-close="outside"
+                    aria-expanded="false">
+              View details
+            </button>
+
+            <!-- Floating info -->
+            <div class="dropdown-menu p-3 rounded-4 border-2 border-secondary-subtle shadow w-100">
+              <ul class="list-unstyled small text-secondary mb-3">
+                <li class="mb-2">
+                  <span class="fw-bold text-danger-emphasis">Row 1:</span>
+                  Hero title + Activities done &amp; Tools used
+                </li>
+                <li class="mb-2">
+                  <span class="fw-bold text-danger-emphasis">Row 2:</span>
+                  Activity 1, Activity 2 + About this subject
+                </li>
+                <li>
+                  <span class="fw-bold text-danger-emphasis">Row 3:</span>
+                  Final project, Next activity &amp; Student
+                </li>
+              </ul>
+
+              <p class="fw-bold small text-danger-emphasis mb-1">Bootstrap used</p>
+              <div class="d-flex flex-wrap gap-1 mb-3">
+                <span class="badge rounded-pill bg-secondary-subtle text-secondary-emphasis">container</span>
+                <span class="badge rounded-pill bg-secondary-subtle text-secondary-emphasis">row / col</span>
+                <span class="badge rounded-pill bg-secondary-subtle text-secondary-emphasis">card</span>
+                <span class="badge rounded-pill bg-secondary-subtle text-secondary-emphasis">dropdown</span>
+              </div>
+
+              <button class="btn btn-sm btn-danger rounded-pill"
+                      type="button"
+                      data-bs-toggle="modal"
+                      data-bs-target="#gallery1">
+                View pictures
+              </button>
+            </div>
+          </div>
         </div>
       </div>
+
       <div class="col-6 col-md-3 p-1">
         <div class="card bg-white border border-2 border-secondary-subtle rounded-4 p-4 py-5 h-100">
           <h5 class="fw-bold text-secondary-emphasis">Activity 2</h5>
@@ -117,6 +162,24 @@
       <p class="small text-secondary mb-0">A.Y 2026-2027 Eula Mae R. Malijan</p>
     </div>
   </footer>
+
+  <!-- GALLERY MODAL: ACTIVITY 1 -->
+  <div class="modal fade" id="gallery1" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-dialog-centered">
+      <div class="modal-content rounded-4 border-2 border-danger-subtle">
+        <div class="modal-header">
+          <h5 class="modal-title fw-bold text-danger-emphasis">Activity 1: Bento layout</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <img src="images/act1-1.png" class="img-fluid rounded-3 w-100" alt="Activity 1 screenshot">
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 
 </body>
 </html>
