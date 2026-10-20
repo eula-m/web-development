@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Web Development Acts</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,600;1,9..144,300&family=DM+Sans:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root {
+  --plum: #5e4b5e;
+  --plum-dark: #3d2e3d;
+  --plum-mid: #4a3a4a;
+  --lilac: #a98fa9;
+  --lilac-light: #c9b5c9;
+  --blush: #d9909a;
+  --blush-light: #f0c4cb;
+  --cream: #f9f5f7;
+  --cream-dark: #efe8ec;
+  --ink: #2b222b;
+  --night: #1e1520;
+  --night-mid: #2a1f2d;
+  --white: #ffffff;
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body {
+  font-family: "DM Sans", system-ui, sans-serif;
+  color: var(--cream);
+  line-height: 1.6;
+  min-height: 100dvh;
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  background:
+    radial-gradient(60% 50% at 50% 0%, rgba(169,143,169,.18), transparent 70%),
+    var(--night);
+  overflow-x: hidden;
+}
+
+header {
+  text-align: center;
+  padding: clamp(1.25rem, 5vh, 3.5rem) clamp(1.25rem, 5vw, 4rem) 0;
+}
+.back {
+  display: flex; width: fit-content; align-items: center; gap: .55rem;
+  margin-bottom: clamp(.5rem, 2vh, 1.25rem);
+  padding: .45rem 1.05rem .45rem .8rem;
+  background: var(--night-mid); color: var(--lilac-light);
+  border: 1px solid var(--plum); border-radius: 999px;
+  text-decoration: none; font-size: .9rem; font-weight: 500;
+  transition: background .3s, border-color .3s, color .3s;
+}
+.back::before {
+  content: ""; width: 12px; height: 12px; background: var(--blush);
+  clip-path: polygon(50% 0, 61% 39%, 100% 50%, 61% 61%, 50% 100%, 39% 61%, 0 50%, 39% 39%);
+  transition: transform .5s;
+}
+.back .arrow { display: inline-block; transition: transform .3s; }
+.back:hover, .back:focus-visible { background: var(--plum-dark); border-color: var(--blush); color: var(--blush-light); outline: none; }
+.back:hover::before, .back:focus-visible::before { transform: rotate(180deg) scale(1.25); }
+.back:hover .arrow, .back:focus-visible .arrow { transform: translateX(-3px); }
+.back:focus-visible { box-shadow: 0 0 0 3px var(--blush-light); }
+
+h1 {
+  font-family: "Fraunces", Georgia, serif;
+  font-weight: 300;
+  font-size: clamp(2.2rem, min(6vw, 9vh), 5rem);
+  line-height: 1.05;
+  letter-spacing: -0.02em;
+  color: var(--blush-light);
+}
+header p {
+  margin: clamp(.5rem, 1.5vh, 1rem) auto 0;
+  max-width: 44ch;
+  color: var(--lilac-light);
+  font-size: clamp(.9rem, 1.4vh + .35rem, 1.05rem);
+}
+
+main {
+  display: grid; place-items: center;
+  padding: clamp(.75rem, 3vh, 2rem) clamp(1.25rem, 5vw, 4rem);
+}
+.acts {
+  list-style: none;
+  display: flex; flex-wrap: wrap; justify-content: center;
+  gap: clamp(1.5rem, 5vw, 5rem);
+  width: 100%;
+}
+
+/* Sparkles */
+.sparkle, .spark {
+  display: block; background: var(--blush-light);
+  clip-path: polygon(50% 0, 61% 39%, 100% 50%, 61% 61%, 50% 100%, 39% 61%, 0 50%, 39% 39%);
+}
+.sparkle { position: fixed; z-index: 0; pointer-events: none; opacity: 0; animation: twinkle 5s ease-in-out infinite; }
+@keyframes twinkle {
+  0%, 100% { opacity: 0; transform: scale(.3) rotate(0deg); }
+  50% { opacity: .85; transform: scale(1) rotate(45deg); }
+}
+header, main, footer { position: relative; z-index: 1; }
+
+.acts li { display: flex; }
+.act {
+  position: relative; display: flex; flex-direction: column;
+  width: clamp(220px, 26vw, 340px);
+  padding: 10px 10px 0;
+  color: inherit; text-decoration: none;
+  background: var(--night-mid);
+  border: 1px solid var(--plum-mid);
+  border-radius: 24px;
+  transition: border-color .3s, background .3s, transform .3s;
+}
+.act:hover, .act:focus-visible { border-color: var(--blush); background: var(--plum-dark); transform: translateY(-4px); outline: none; }
+.act:focus-visible { box-shadow: 0 0 0 3px var(--blush-light); }
+
+.thumb {
+  position: relative; height: clamp(130px, 30vh, 300px);
+  border-radius: 16px; overflow: hidden;
+  background: linear-gradient(150deg, var(--plum) 0%, var(--plum-dark) 60%, var(--night-mid) 100%);
+}
+.thumb::before {
+  content: "</>"; position: absolute; inset: 0; display: grid; place-items: center;
+  font-family: "Fraunces", serif; font-size: 2.4rem; font-weight: 300; color: var(--lilac);
+}
+.thumb img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; transition: transform .5s; }
+.act:hover .thumb img { transform: scale(1.05); }
+
+.spark { position: absolute; z-index: 2; pointer-events: none; transform: scale(0) rotate(-90deg); transition: transform .45s cubic-bezier(.3,1.6,.5,1); }
+.spark.s1 { width: 26px; height: 26px; top: -12px; right: -10px; }
+.spark.s2 { width: 16px; height: 16px; top: 38%; left: -9px; background: var(--lilac-light); transition-delay: .06s; }
+.spark.s3 { width: 20px; height: 20px; bottom: 20%; right: -11px; background: var(--blush); transition-delay: .12s; }
+.act:hover .spark, .act:focus-visible .spark { transform: scale(1) rotate(0deg); }
+
+.body { flex: 1; display: flex; flex-direction: column; padding: clamp(.7rem, 2vh, 1.1rem) .75rem clamp(.9rem, 2.2vh, 1.3rem); text-align: left; }
+.no { font-family: "Fraunces", serif; font-style: italic; font-weight: 300; color: var(--lilac); font-size: 1rem; }
+.act h2 { font-family: "Fraunces", serif; font-weight: 600; color: var(--cream); font-size: clamp(1.2rem, 1vw + .8rem, 1.6rem); line-height: 1.2; }
+.act p { margin-top: .25rem; font-size: .9rem; color: var(--lilac-light); }
+.go { display: inline-block; margin-top: auto; padding-top: .7rem; font-size: .88rem; font-weight: 500; color: var(--blush); }
+
+footer {
+  text-align: center; padding: .5rem clamp(1rem, 5vw, 4rem) 1rem;
+  color: var(--lilac); opacity: .6; font-size: .8rem;
+}
+
+@media (max-width: 700px) {
+  .act { width: min(80vw, 320px); }
+  .thumb { height: clamp(140px, 42vw, 230px); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .sparkle { animation: none; opacity: .5; }
+  * { transition: none !important; }
+}
+
+.description {
+  white-space: nowrap;
+}
+</style>
+</head>
+<body>
+
+
+<span class="sparkle" aria-hidden="true" style="top:6%;left:12%;width:10px;height:10px;animation-delay:0s"></span>
+<span class="sparkle" aria-hidden="true" style="top:14%;left:70%;width:16px;height:16px;animation-delay:1.2s"></span>
+<span class="sparkle" aria-hidden="true" style="top:9%;left:42%;width:8px;height:8px;animation-delay:2.4s"></span>
+<span class="sparkle" aria-hidden="true" style="top:22%;left:88%;width:12px;height:12px;animation-delay:0.6s"></span>
+<span class="sparkle" aria-hidden="true" style="top:31%;left:24%;width:18px;height:18px;animation-delay:3s"></span>
+<span class="sparkle" aria-hidden="true" style="top:38%;left:8%;width:9px;height:9px;animation-delay:1.8s"></span>
+<span class="sparkle" aria-hidden="true" style="top:47%;left:92%;width:14px;height:14px;animation-delay:2.1s"></span>
+<span class="sparkle" aria-hidden="true" style="top:55%;left:15%;width:11px;height:11px;animation-delay:0.3s"></span>
+<span class="sparkle" aria-hidden="true" style="top:62%;left:78%;width:9px;height:9px;animation-delay:3.4s"></span>
+<span class="sparkle" aria-hidden="true" style="top:70%;left:5%;width:15px;height:15px;animation-delay:1.5s"></span>
+<span class="sparkle" aria-hidden="true" style="top:78%;left:60%;width:8px;height:8px;animation-delay:2.7s"></span>
+<span class="sparkle" aria-hidden="true" style="top:84%;left:90%;width:17px;height:17px;animation-delay:0.9s"></span>
+<span class="sparkle" aria-hidden="true" style="top:91%;left:30%;width:10px;height:10px;animation-delay:3.1s"></span>
+<span class="sparkle" aria-hidden="true" style="top:95%;left:72%;width:13px;height:13px;animation-delay:2s"></span>
+<span class="sparkle" aria-hidden="true" style="top:4%;left:92%;width:9px;height:9px;animation-delay:1.1s"></span>
+<span class="sparkle" aria-hidden="true" style="top:88%;left:10%;width:12px;height:12px;animation-delay:2.5s"></span>
+
+<header>
+  <a class="back" href="https://eula-m.github.io/"><span class="arrow">&larr;</span> Back to portfolio</a>
+  <h1>Web Development Acts</h1>
+  <p class="description">A collection of my web development acts. Select an act to open it.</p>
+</header>
+
+<main>
+  <ul class="acts">
+    <li>
+      <a class="act" href="ACT%201%20-%20BENTO/index.html">
+        <span class="spark s1"></span><span class="spark s2"></span><span class="spark s3"></span>
+        <div class="thumb"><img src="ACT%201%20-%20BENTO/images/thumbnail.png" alt="Thumbnail of Act I" loading="lazy" onerror="this.remove()"></div>
+        <div class="body">
+          <span class="no">Act I</span>
+          <h2>Bento</h2>
+          <p>A bento grid layout built with HTML and Bootstrap.</p>
+          <span class="go">Open Act I</span>
+        </div>
+      </a>
+    </li>
+    <li>
+      <a class="act" href="ACT%202%20-%20JSON/index.html">
+        <span class="spark s1"></span><span class="spark s2"></span><span class="spark s3"></span>
+        <div class="thumb"><img src="ACT%202%20-%20JSON/thumbnail.png" alt="Thumbnail of Act II" loading="lazy" onerror="this.remove()"></div>
+        <div class="body">
+          <span class="no">Act II</span>
+          <h2>JSON</h2>
+          <p>A new website that uses JSON data to display its content.</p>
+          <span class="go">Open Act II</span>
+        </div>
+      </a>
+    </li>
+  </ul>
+</main>
+
+<footer>Eula Mae R. Malijan | BSIT 3-2</footer>
+
+</body>
+</html>
