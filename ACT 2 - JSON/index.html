@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Home Cooked | Recipe Book</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@500;600;700&family=Fraunces:ital,opsz,wght,SOFT,WONK@0,9..144,400..900,0..100,0..1;1,9..144,400..900,0..100,0..1&family=Literata:ital,opsz,wght@0,7..72,400..700;1,7..72,400..600&family=Pacifico&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="table-decor" aria-hidden="true">
+    <svg width="0" height="0" style="position:absolute"><defs><filter id="f-ink" x="-5%" y="-5%" width="110%" height="110%" color-interpolation-filters="sRGB">
+ <feTurbulence type="fractalNoise" baseFrequency=".85" numOctaves="2" seed="4" result="n"/>
+ <feColorMatrix in="n" values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  -4 0 0 0 3.1" result="m"/>
+ <feComposite in="SourceGraphic" in2="m" operator="in"/>
+</filter></defs></svg>
+    <div class="mat"></div>
+    <a class="sticky" href="../index.html" title="Back to WebDev Acts"><span class="sticky-paper">&larr; Back to<br>WebDev Acts</span></a>
+  </div>
+  <div class="night-shade" aria-hidden="true"></div>
+  <div class="lamp-glow" aria-hidden="true"></div>
+  <div class="controls">
+    <button class="ctl" id="soundBtn" type="button" aria-pressed="false" aria-label="Page-flip sound" title="Page-flip sound"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 9.5h3.5L12 5.5v13l-4.5-4H4z" fill="currentColor"/><g class="on-waves"><path d="M15.5 9a4.5 4.5 0 0 1 0 6"/><path d="M18 6.5a8 8 0 0 1 0 11"/></g></svg></button>
+    <button class="ctl" id="themeBtn" type="button" aria-pressed="false" aria-label="Night mode" title="Day / night"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path class="moon" d="M20 14.5A8 8 0 0 1 9.5 4a8 8 0 1 0 10.5 10.5z" fill="currentColor"/><g class="sun"><circle cx="12" cy="12" r="4"/><path d="M12 2.5v2M12 19.5v2M2.5 12h2M19.5 12h2M5.3 5.3l1.4 1.4M17.3 17.3l1.4 1.4M5.3 18.7l1.4-1.4M17.3 6.7l1.4-1.4"/></g></svg></button>
+  </div>
+  <main class="scene">
+    <div class="book" id="book">
+
+      <!-- Right page -->
+      <section class="page-right" aria-live="polite">
+        <div class="sheet" id="detail"></div>
+      </section>
+
+      <!-- Cover -->
+      <div class="cover" id="cover">
+        <button class="cover-front" id="openBtn" aria-label="Open the book">
+          <span class="frame">
+            <span class="emblem"><svg viewBox="0 0 100 100" width="64%" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M16 54h68c0 18-14 30-34 30S16 72 16 54z"/><path d="M27 54c2-15 12-23 23-23s21 8 23 23"/><path d="M38 24c-4-5 4-8 0-13M50 22c-4-5 4-8 0-13M62 24c-4-5 4-8 0-13"/></svg></span>
+            <span class="book-title" id="bookTitle">Home Cooked</span>
+            <span class="book-sub" id="bookSub">Filipino family favorites</span>
+            <span class="open-cue" data-ui="openCue">Click to open the book</span>
+          </span>
+        </button>
+        <div class="cover-back">
+          <div class="tabs" role="tablist">
+            <button class="tab on" id="tabAll" role="tab" aria-selected="true" data-ui="tabRecipes">Recipes</button>
+            <button class="tab" id="tabFav" role="tab" aria-selected="false"><span data-ui="tabFavorites">Favorites</span><span id="favCount">0</span></button>
+          </div>
+          <h2 data-ui="contents">Contents</h2>
+          <input type="search" id="search" placeholder="Search a dish, ingredient or tag…" data-ui-placeholder="searchPlaceholder" aria-label="Search recipes">
+          <div class="chips" id="chips"></div>
+          <ol class="toc" id="toc"><li class="status">Turning the pages…</li></ol>
+          <button class="close-btn" id="closeBtn" data-ui="closeBook">Close the book</button>
+        </div>
+      </div>
+
+    </div>
+  </main>
+  <script src="script.js"></script>
+</body>
+</html>

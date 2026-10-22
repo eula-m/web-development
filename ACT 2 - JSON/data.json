@@ -1,0 +1,1071 @@
+{
+  "title": "Home Cooked",
+  "subtitle": "Filipino family favorites",
+  "currency": "₱",
+  "ui": {
+    "openCue": "Click to open the book",
+    "contents": "Contents",
+    "tabRecipes": "Recipes",
+    "tabFavorites": "Favorites",
+    "closeBook": "Close the book",
+    "searchPlaceholder": "Search a dish, ingredient or tag…",
+    "all": "all",
+    "welcome": "Pick a dish on the left page<br>and the page will turn for you.",
+    "noFavs": "No favorites yet. Open a recipe and press Save to keep it here.",
+    "noMatch": "No matches. Try another ingredient.",
+    "save": "Save",
+    "saved": "Saved",
+    "seeVideo": "See how others cook it",
+    "backToPhoto": "Back to the photo",
+    "cookIt": "I cooked this!",
+    "cookAgain": "I cooked it again!",
+    "cookedStamp": "Cooked!",
+    "cookedOnce": "Cooked once",
+    "cookedTimes": "Cooked {n} times",
+    "undo": "undo",
+    "servings": "{n} servings",
+    "fewerServings": "Fewer servings",
+    "moreServings": "More servings",
+    "ingredients": "Ingredients",
+    "instructions": "Instructions",
+    "minutes": "{n} min",
+    "about": "About {price}",
+    "photoSlot": "Add your photo here",
+    "source": "Source",
+    "timerStart": "⏱ {n} min",
+    "timerRunning": "⏱ {t} · tap to stop",
+    "timerDone": "✓ Done! tap to reset",
+    "themeDay": "Switch to daytime",
+    "themeNight": "Switch to night",
+    "soundOn": "Page-flip sound: on",
+    "soundOff": "Page-flip sound: off"
+  },
+  "limits": {
+    "minServings": 1,
+    "maxServings": 20
+  },
+  "units": {
+    "pc": "pcs",
+    "clove": "cloves",
+    "slice": "slices",
+    "cup": "cups",
+    "bunch": "bunches",
+    "can": "cans"
+  },
+  "categories": [
+    {
+      "id": "main dish",
+      "label": "Main dish"
+    },
+    {
+      "id": "soup",
+      "label": "Soup"
+    },
+    {
+      "id": "noodles",
+      "label": "Noodles"
+    },
+    {
+      "id": "vegetable",
+      "label": "Vegetable"
+    },
+    {
+      "id": "snack",
+      "label": "Snack"
+    },
+    {
+      "id": "dessert",
+      "label": "Dessert"
+    },
+    {
+      "id": "breakfast",
+      "label": "Breakfast"
+    }
+  ],
+  "tableItems": [
+    {
+      "class": "fork",
+      "src": "images/fork.png"
+    },
+    {
+      "class": "spoon",
+      "src": "images/spoon.png"
+    },
+    {
+      "class": "sandok",
+      "src": "images/sandok.png"
+    },
+    {
+      "class": "rice",
+      "src": "images/rice.png"
+    },
+    {
+      "class": "coffee",
+      "src": "images/coffee.png",
+      "steam": true
+    },
+    {
+      "class": "calamansi",
+      "src": "images/calamansi.png"
+    },
+    {
+      "class": "chili",
+      "src": "images/chili.png"
+    },
+    {
+      "class": "sawsawan",
+      "src": "images/sawsawan.png"
+    },
+    {
+      "class": "napkin",
+      "src": "images/napkin.png"
+    }
+  ],
+  "recipes": [
+    {
+      "slug": "chicken-adobo",
+      "legacyId": 1,
+      "name": "Chicken Adobo",
+      "category": "main dish",
+      "tags": [
+        "budget",
+        "classic",
+        "make-ahead"
+      ],
+      "cookingTime": 45,
+      "difficulty": "easy",
+      "budget": 250,
+      "servings": 4,
+      "story": "The unofficial national dish. It tastes even better the next day.",
+      "ingredients": [
+        {
+          "name": "chicken",
+          "amount": 1,
+          "unit": "kg"
+        },
+        {
+          "name": "soy sauce",
+          "amount": 0.5,
+          "unit": "cup"
+        },
+        {
+          "name": "vinegar",
+          "amount": 0.25,
+          "unit": "cup"
+        },
+        {
+          "name": "garlic",
+          "amount": 6,
+          "unit": "clove"
+        },
+        {
+          "name": "bay leaves",
+          "amount": 2,
+          "unit": "pc"
+        }
+      ],
+      "steps": [
+        {
+          "text": "Sauté the garlic until golden."
+        },
+        {
+          "text": "Add the chicken and let it brown."
+        },
+        {
+          "text": "Pour in the soy sauce and vinegar, then add the bay leaves."
+        },
+        {
+          "text": "Simmer for 30 minutes until the sauce thickens.",
+          "minutes": 30
+        }
+      ],
+      "image": "images/chicken-adobo.jpg",
+      "video": "https://youtu.be/wwapBsT0oc8?si=yY0_Gfwmv5dFQ4HH"
+    },
+    {
+      "slug": "pork-sinigang",
+      "legacyId": 2,
+      "name": "Pork Sinigang",
+      "category": "soup",
+      "tags": [
+        "sour",
+        "rainy-day"
+      ],
+      "cookingTime": 60,
+      "difficulty": "medium",
+      "budget": 350,
+      "servings": 5,
+      "story": "A sour, warming soup made for rainy days.",
+      "ingredients": [
+        {
+          "name": "pork belly",
+          "amount": 0.75,
+          "unit": "kg"
+        },
+        {
+          "name": "tamarind",
+          "amount": 12,
+          "unit": "pc"
+        },
+        {
+          "name": "water spinach",
+          "amount": 1,
+          "unit": "bunch"
+        },
+        {
+          "name": "radish",
+          "amount": 1,
+          "unit": "pc"
+        },
+        {
+          "name": "tomatoes",
+          "amount": 2,
+          "unit": "pc"
+        }
+      ],
+      "steps": [
+        {
+          "text": "Boil the pork until tender."
+        },
+        {
+          "text": "Add the tomatoes, onion, and radish."
+        },
+        {
+          "text": "Stir in the mashed and strained tamarind."
+        },
+        {
+          "text": "Add the water spinach and season with fish sauce."
+        }
+      ],
+      "image": "images/pork-sinigang.jpg",
+      "video": "https://youtu.be/Vuk3wly8mxQ?si=7yNVBiJVmL7_CJtl"
+    },
+    {
+      "slug": "pancit-canton",
+      "legacyId": 3,
+      "name": "Pancit Canton",
+      "category": "noodles",
+      "tags": [
+        "quick",
+        "budget",
+        "party"
+      ],
+      "cookingTime": 30,
+      "difficulty": "easy",
+      "budget": 200,
+      "servings": 4,
+      "story": "Served at birthdays for long life.",
+      "ingredients": [
+        {
+          "name": "canton noodles",
+          "amount": 250,
+          "unit": "g"
+        },
+        {
+          "name": "cabbage",
+          "amount": 2,
+          "unit": "cup"
+        },
+        {
+          "name": "carrot",
+          "amount": 1,
+          "unit": "pc"
+        },
+        {
+          "name": "shrimp",
+          "amount": 150,
+          "unit": "g"
+        },
+        {
+          "name": "soy sauce",
+          "amount": 3,
+          "unit": "tbsp"
+        }
+      ],
+      "steps": [
+        {
+          "text": "Sauté the garlic, onion, and shrimp."
+        },
+        {
+          "text": "Add the carrot and cabbage."
+        },
+        {
+          "text": "Pour in broth and soy sauce, then bring to a boil."
+        },
+        {
+          "text": "Toss in the noodles until the liquid is absorbed."
+        }
+      ],
+      "image": "images/pancit-canton.jpg",
+      "video": "https://youtu.be/9UEv8VlLDOc?si=3R00eGbzfvoGgDFr"
+    },
+    {
+      "slug": "kare-kare",
+      "legacyId": 4,
+      "name": "Kare-Kare",
+      "category": "main dish",
+      "tags": [
+        "special-occasion"
+      ],
+      "cookingTime": 150,
+      "difficulty": "hard",
+      "budget": 600,
+      "servings": 6,
+      "story": "A feast dish in peanut sauce. Never skip the shrimp paste.",
+      "ingredients": [
+        {
+          "name": "oxtail",
+          "amount": 1,
+          "unit": "kg"
+        },
+        {
+          "name": "peanut butter",
+          "amount": 0.5,
+          "unit": "cup"
+        },
+        {
+          "name": "eggplant",
+          "amount": 2,
+          "unit": "pc"
+        },
+        {
+          "name": "string beans",
+          "amount": 1,
+          "unit": "bunch"
+        },
+        {
+          "name": "bok choy",
+          "amount": 1,
+          "unit": "bunch"
+        }
+      ],
+      "steps": [
+        {
+          "text": "Boil the oxtail until tender (about 2 hours)."
+        },
+        {
+          "text": "Stir in the peanut butter and ground toasted rice."
+        },
+        {
+          "text": "Add the eggplant and string beans and cook until soft."
+        },
+        {
+          "text": "Serve with shrimp paste on the side."
+        }
+      ],
+      "image": "images/kare-kare.jpg",
+      "video": "https://youtu.be/mJzsF7DOd_U?si=muS4M6EZSIuj4ELC"
+    },
+    {
+      "slug": "turon",
+      "legacyId": 5,
+      "name": "Turon",
+      "category": "snack",
+      "tags": [
+        "quick",
+        "budget",
+        "sweet"
+      ],
+      "cookingTime": 20,
+      "difficulty": "easy",
+      "budget": 100,
+      "servings": 6,
+      "story": "Crunchy outside, soft and sweet inside.",
+      "ingredients": [
+        {
+          "name": "saba bananas",
+          "amount": 6,
+          "unit": "pc"
+        },
+        {
+          "name": "jackfruit",
+          "amount": 1,
+          "unit": "cup"
+        },
+        {
+          "name": "spring roll wrappers",
+          "amount": 12,
+          "unit": "pc"
+        },
+        {
+          "name": "brown sugar",
+          "amount": 0.5,
+          "unit": "cup"
+        }
+      ],
+      "steps": [
+        {
+          "text": "Halve the bananas and roll them in brown sugar."
+        },
+        {
+          "text": "Place on a wrapper with jackfruit and roll tightly."
+        },
+        {
+          "text": "Fry in hot oil until golden brown."
+        },
+        {
+          "text": "Sprinkle with sugar while still hot."
+        }
+      ],
+      "image": "images/turon.jpg",
+      "video": "https://youtu.be/16np55dhV-0?si=guQwO258AGFUFS3c"
+    },
+    {
+      "slug": "halo-halo",
+      "legacyId": 6,
+      "name": "Halo-Halo",
+      "category": "dessert",
+      "tags": [
+        "cold",
+        "sweet"
+      ],
+      "cookingTime": 15,
+      "difficulty": "easy",
+      "budget": 150,
+      "servings": 2,
+      "story": "Mix it all up, then dig in.",
+      "ingredients": [
+        {
+          "name": "shaved ice",
+          "amount": 4,
+          "unit": "cup"
+        },
+        {
+          "name": "sago and gulaman",
+          "amount": 0.5,
+          "unit": "cup"
+        },
+        {
+          "name": "leche flan",
+          "amount": 2,
+          "unit": "slice"
+        },
+        {
+          "name": "ube halaya",
+          "amount": 2,
+          "unit": "tbsp"
+        },
+        {
+          "name": "evaporated milk",
+          "amount": 0.5,
+          "unit": "cup"
+        }
+      ],
+      "steps": [
+        {
+          "text": "Layer the sago, gulaman, and bananas in a tall glass."
+        },
+        {
+          "text": "Fill with shaved ice."
+        },
+        {
+          "text": "Pour over the milk and top with ube and leche flan."
+        },
+        {
+          "text": "Mix everything together before eating."
+        }
+      ],
+      "image": "images/halo-halo.jpg",
+      "video": "https://youtu.be/QfP5Mk8I-co?si=pJZsuXiQTGl8_Ayb"
+    },
+    {
+      "slug": "chicken-tinola",
+      "legacyId": 7,
+      "name": "Chicken Tinola",
+      "category": "soup",
+      "tags": [
+        "light",
+        "rainy-day"
+      ],
+      "cookingTime": 45,
+      "difficulty": "easy",
+      "budget": 300,
+      "servings": 4,
+      "story": "Ginger broth that feels like a hug when someone is sick.",
+      "ingredients": [
+        {
+          "name": "chicken",
+          "amount": 1,
+          "unit": "kg"
+        },
+        {
+          "name": "ginger",
+          "amount": 3,
+          "unit": "tbsp"
+        },
+        {
+          "name": "green papaya",
+          "amount": 1,
+          "unit": "pc"
+        },
+        {
+          "name": "chili leaves",
+          "amount": 2,
+          "unit": "cup"
+        },
+        {
+          "name": "fish sauce",
+          "amount": 2,
+          "unit": "tbsp"
+        }
+      ],
+      "steps": [
+        {
+          "text": "Sauté the ginger, garlic, and onion."
+        },
+        {
+          "text": "Add the chicken and fish sauce, and cook until lightly browned."
+        },
+        {
+          "text": "Pour in water and simmer for 25 minutes.",
+          "minutes": 25
+        },
+        {
+          "text": "Add the papaya until tender, then stir in the chili leaves."
+        }
+      ],
+      "image": "images/tinola.jpg",
+      "video": "https://youtu.be/Tv_p1rrZuUU?si=l31rdZw0keLf7TcT"
+    },
+    {
+      "slug": "pork-sisig",
+      "legacyId": 8,
+      "name": "Pork Sisig",
+      "category": "main dish",
+      "tags": [
+        "spicy",
+        "pulutan"
+      ],
+      "cookingTime": 60,
+      "difficulty": "medium",
+      "budget": 350,
+      "servings": 4,
+      "story": "Sizzling, crunchy, and best with cold drinks.",
+      "ingredients": [
+        {
+          "name": "pork belly",
+          "amount": 0.5,
+          "unit": "kg"
+        },
+        {
+          "name": "onion",
+          "amount": 2,
+          "unit": "pc"
+        },
+        {
+          "name": "calamansi",
+          "amount": 6,
+          "unit": "pc"
+        },
+        {
+          "name": "green chilies",
+          "amount": 3,
+          "unit": "pc"
+        },
+        {
+          "name": "soy sauce",
+          "amount": 2,
+          "unit": "tbsp"
+        }
+      ],
+      "steps": [
+        {
+          "text": "Boil the pork until tender, then grill or broil until crisp."
+        },
+        {
+          "text": "Chop the pork into small pieces."
+        },
+        {
+          "text": "Sauté the onion and chilies, then add the pork."
+        },
+        {
+          "text": "Season with soy sauce and calamansi, and serve sizzling."
+        }
+      ],
+      "image": "images/sisig.jpg",
+      "video": "https://youtu.be/v2fxqlg-k0o?si=wsDv4KuAVv_eZAIV"
+    },
+    {
+      "slug": "lumpiang-shanghai",
+      "legacyId": 9,
+      "name": "Lumpiang Shanghai",
+      "category": "snack",
+      "tags": [
+        "party",
+        "crispy"
+      ],
+      "cookingTime": 40,
+      "difficulty": "medium",
+      "budget": 250,
+      "servings": 6,
+      "story": "Party food that disappears before the guests arrive.",
+      "ingredients": [
+        {
+          "name": "ground pork",
+          "amount": 0.5,
+          "unit": "kg"
+        },
+        {
+          "name": "carrot",
+          "amount": 1,
+          "unit": "pc"
+        },
+        {
+          "name": "onion",
+          "amount": 1,
+          "unit": "pc"
+        },
+        {
+          "name": "garlic",
+          "amount": 4,
+          "unit": "clove"
+        },
+        {
+          "name": "lumpia wrappers",
+          "amount": 30,
+          "unit": "pc"
+        },
+        {
+          "name": "egg",
+          "amount": 1,
+          "unit": "pc"
+        }
+      ],
+      "steps": [
+        {
+          "text": "Mix the pork, carrot, onion, garlic, and egg."
+        },
+        {
+          "text": "Roll a spoonful of filling in each wrapper."
+        },
+        {
+          "text": "Fry in medium-hot oil until golden brown."
+        },
+        {
+          "text": "Serve with sweet chili sauce."
+        }
+      ],
+      "image": "images/lumpiang-shanghai.jpg",
+      "video": "https://youtu.be/3Z646fOx7Tc?si=DCV808a82Fs2PcU-"
+    },
+    {
+      "slug": "arroz-caldo",
+      "legacyId": 10,
+      "name": "Arroz Caldo",
+      "category": "soup",
+      "tags": [
+        "comfort",
+        "rainy-day"
+      ],
+      "cookingTime": 50,
+      "difficulty": "easy",
+      "budget": 200,
+      "servings": 4,
+      "story": "Warm rice porridge for rainy mornings and long nights.",
+      "ingredients": [
+        {
+          "name": "glutinous rice",
+          "amount": 1,
+          "unit": "cup"
+        },
+        {
+          "name": "chicken",
+          "amount": 0.5,
+          "unit": "kg"
+        },
+        {
+          "name": "ginger",
+          "amount": 2,
+          "unit": "tbsp"
+        },
+        {
+          "name": "garlic",
+          "amount": 5,
+          "unit": "clove"
+        },
+        {
+          "name": "fish sauce",
+          "amount": 2,
+          "unit": "tbsp"
+        }
+      ],
+      "steps": [
+        {
+          "text": "Sauté the ginger, garlic, and onion."
+        },
+        {
+          "text": "Add the chicken and rice, and stir for 2 minutes.",
+          "minutes": 2
+        },
+        {
+          "text": "Pour in water and simmer until the rice is soft and creamy."
+        },
+        {
+          "text": "Top with toasted garlic, green onions, and calamansi."
+        }
+      ],
+      "image": "images/arroz-caldo.jpg",
+      "video": "https://youtu.be/CGCaBQGKMXM?si=ZnQa2koxsjuuAKBN"
+    },
+    {
+      "slug": "bicol-express",
+      "legacyId": 11,
+      "name": "Bicol Express",
+      "category": "main dish",
+      "tags": [
+        "spicy",
+        "creamy"
+      ],
+      "cookingTime": 50,
+      "difficulty": "medium",
+      "budget": 300,
+      "servings": 4,
+      "story": "Creamy coconut, shrimp paste, and a serious kick of chili.",
+      "ingredients": [
+        {
+          "name": "pork",
+          "amount": 0.5,
+          "unit": "kg"
+        },
+        {
+          "name": "coconut milk",
+          "amount": 2,
+          "unit": "cup"
+        },
+        {
+          "name": "long green chilies",
+          "amount": 6,
+          "unit": "pc"
+        },
+        {
+          "name": "shrimp paste",
+          "amount": 2,
+          "unit": "tbsp"
+        },
+        {
+          "name": "onion",
+          "amount": 1,
+          "unit": "pc"
+        }
+      ],
+      "steps": [
+        {
+          "text": "Sauté the garlic, onion, and shrimp paste."
+        },
+        {
+          "text": "Add the pork and cook until the color changes."
+        },
+        {
+          "text": "Pour in the coconut milk and simmer until the pork is tender."
+        },
+        {
+          "text": "Add the chilies and cook until the sauce thickens."
+        }
+      ],
+      "image": "images/bicol-express.jpg",
+      "video": "https://youtu.be/EglwOEDdsHU?si=SCec871Sefa4iHeO"
+    },
+    {
+      "slug": "pinakbet",
+      "legacyId": 12,
+      "name": "Pinakbet",
+      "category": "vegetable",
+      "tags": [
+        "veggie-forward",
+        "budget"
+      ],
+      "cookingTime": 35,
+      "difficulty": "easy",
+      "budget": 150,
+      "servings": 4,
+      "story": "A bowl of garden vegetables from the Ilocos region.",
+      "ingredients": [
+        {
+          "name": "eggplant",
+          "amount": 2,
+          "unit": "pc"
+        },
+        {
+          "name": "okra",
+          "amount": 8,
+          "unit": "pc"
+        },
+        {
+          "name": "bitter melon",
+          "amount": 1,
+          "unit": "pc"
+        },
+        {
+          "name": "squash",
+          "amount": 1,
+          "unit": "cup"
+        },
+        {
+          "name": "string beans",
+          "amount": 1,
+          "unit": "cup"
+        },
+        {
+          "name": "shrimp paste",
+          "amount": 2,
+          "unit": "tbsp"
+        }
+      ],
+      "steps": [
+        {
+          "text": "Sauté the garlic, onion, and tomato."
+        },
+        {
+          "text": "Stir in the shrimp paste and a little water."
+        },
+        {
+          "text": "Layer the squash, beans, eggplant, okra, and bitter melon."
+        },
+        {
+          "text": "Cover and steam until tender without stirring too much."
+        }
+      ],
+      "image": "images/pinakbet.jpg",
+      "video": "https://youtu.be/lMubUv_p9aQ?si=WZnb8AeQNCoIcsH5"
+    },
+    {
+      "slug": "leche-flan",
+      "legacyId": 13,
+      "name": "Leche Flan",
+      "category": "dessert",
+      "tags": [
+        "sweet",
+        "special-occasion"
+      ],
+      "cookingTime": 75,
+      "difficulty": "medium",
+      "budget": 180,
+      "servings": 6,
+      "story": "Silky custard with a golden caramel crown.",
+      "ingredients": [
+        {
+          "name": "egg yolks",
+          "amount": 10,
+          "unit": "pc"
+        },
+        {
+          "name": "condensed milk",
+          "amount": 1,
+          "unit": "can"
+        },
+        {
+          "name": "evaporated milk",
+          "amount": 1,
+          "unit": "can"
+        },
+        {
+          "name": "sugar",
+          "amount": 0.5,
+          "unit": "cup"
+        },
+        {
+          "name": "vanilla",
+          "amount": 1,
+          "unit": "tsp"
+        }
+      ],
+      "steps": [
+        {
+          "text": "Melt the sugar in the mold until golden brown."
+        },
+        {
+          "text": "Mix the yolks, both milks, and vanilla, then strain."
+        },
+        {
+          "text": "Pour into the mold and cover tightly."
+        },
+        {
+          "text": "Steam on low heat for 40 minutes, chill, then flip onto a plate.",
+          "minutes": 40
+        }
+      ],
+      "image": "images/leche-flan.jpg",
+      "video": "https://youtu.be/RNqBotfPsiw?si=aVeOYnINTIThHjBT"
+    },
+    {
+      "slug": "bibingka",
+      "legacyId": 14,
+      "name": "Bibingka",
+      "category": "snack",
+      "tags": [
+        "sweet",
+        "christmas"
+      ],
+      "cookingTime": 50,
+      "difficulty": "medium",
+      "budget": 220,
+      "servings": 6,
+      "story": "A Christmas morning tradition with salted egg on top.",
+      "ingredients": [
+        {
+          "name": "rice flour",
+          "amount": 1.5,
+          "unit": "cup"
+        },
+        {
+          "name": "coconut milk",
+          "amount": 1,
+          "unit": "cup"
+        },
+        {
+          "name": "eggs",
+          "amount": 3,
+          "unit": "pc"
+        },
+        {
+          "name": "sugar",
+          "amount": 0.75,
+          "unit": "cup"
+        },
+        {
+          "name": "baking powder",
+          "amount": 2,
+          "unit": "tsp"
+        },
+        {
+          "name": "salted egg",
+          "amount": 2,
+          "unit": "pc"
+        }
+      ],
+      "steps": [
+        {
+          "text": "Whisk the flour, sugar, baking powder, coconut milk, and eggs."
+        },
+        {
+          "text": "Pour into pans lined with banana leaf."
+        },
+        {
+          "text": "Top with sliced salted egg and bake until golden."
+        },
+        {
+          "text": "Brush with butter and sprinkle with sugar and grated coconut."
+        }
+      ],
+      "image": "images/bibingka.jpg",
+      "video": "https://youtu.be/JxQ_CD67XTU?si=d_6bBBwMHd-v26tm"
+    },
+    {
+      "slug": "tapsilog",
+      "legacyId": 15,
+      "name": "Tapsilog",
+      "category": "breakfast",
+      "tags": [
+        "breakfast",
+        "quick"
+      ],
+      "cookingTime": 40,
+      "difficulty": "easy",
+      "budget": 150,
+      "servings": 2,
+      "story": "Beef tapa, garlic rice, and a fried egg: the breakfast of champions.",
+      "ingredients": [
+        {
+          "name": "beef tapa",
+          "amount": 250,
+          "unit": "g"
+        },
+        {
+          "name": "garlic rice",
+          "amount": 2,
+          "unit": "cup"
+        },
+        {
+          "name": "eggs",
+          "amount": 2,
+          "unit": "pc"
+        },
+        {
+          "name": "vinegar",
+          "amount": 2,
+          "unit": "tbsp"
+        },
+        {
+          "name": "garlic",
+          "amount": 4,
+          "unit": "clove"
+        }
+      ],
+      "steps": [
+        {
+          "text": "Fry the beef tapa until browned and slightly crisp."
+        },
+        {
+          "text": "Sauté the leftover rice with garlic."
+        },
+        {
+          "text": "Fry the eggs sunny-side up."
+        },
+        {
+          "text": "Serve with a small dish of spiced vinegar."
+        }
+      ],
+      "image": "images/tapsilog.jpg",
+      "video": "https://youtu.be/65xcIysS5Yc?si=UoqWqozNpSIj1cWQ"
+    },
+    {
+      "slug": "champorado",
+      "legacyId": 16,
+      "name": "Champorado",
+      "category": "breakfast",
+      "tags": [
+        "sweet",
+        "comfort",
+        "quick"
+      ],
+      "cookingTime": 25,
+      "difficulty": "easy",
+      "budget": 80,
+      "servings": 4,
+      "story": "Chocolate rice porridge, traditionally eaten with salty dried fish.",
+      "ingredients": [
+        {
+          "name": "glutinous rice",
+          "amount": 0.75,
+          "unit": "cup"
+        },
+        {
+          "name": "tablea (chocolate)",
+          "amount": 6,
+          "unit": "pc"
+        },
+        {
+          "name": "sugar",
+          "amount": 0.5,
+          "unit": "cup"
+        },
+        {
+          "name": "evaporated milk",
+          "amount": 0.5,
+          "unit": "cup"
+        },
+        {
+          "name": "water",
+          "amount": 4,
+          "unit": "cup"
+        }
+      ],
+      "steps": [
+        {
+          "text": "Boil the rice in water until soft."
+        },
+        {
+          "text": "Add the tablea and stir until fully melted."
+        },
+        {
+          "text": "Sweeten with sugar and simmer until thick."
+        },
+        {
+          "text": "Serve hot with a drizzle of evaporated milk."
+        }
+      ],
+      "image": "images/champorado.jpg",
+      "video": "https://youtu.be/OKn6DUERXLs?si=1cAz2NMqcBcsn7Uh"
+    }
+  ]
+}
