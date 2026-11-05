@@ -1,0 +1,13 @@
+{
+	"folders": [
+		{
+			"path": "../eula-portfolio"
+		},
+		{
+			"path": "."
+		}
+	],
+	"settings": {
+		"liveServer.settings.multiRootWorkspaceName": "web-development"
+	}
+}

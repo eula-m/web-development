@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ArtSpace | Art Explorer</title>
+    <meta name="description" content="ArtSpace is a digital art gallery. Explore public-domain masterworks from The Metropolitan Museum of Art, save your favorites, and read the story behind each piece.">
+    <meta name="theme-color" content="#120c07">
+
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="ArtSpace | Art Explorer">
+    <meta property="og:description" content="A quiet hall of masterworks from The Metropolitan Museum of Art. Walk the gallery, search by artist or subject, and save your favorites.">
+    <meta property="og:site_name" content="ArtSpace">
+    <meta property="og:image" content="images/social-preview.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="ArtSpace, a quiet hall of masterworks">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="ArtSpace | Art Explorer">
+    <meta name="twitter:description" content="A quiet hall of masterworks from The Metropolitan Museum of Art.">
+    <meta name="twitter:image" content="images/social-preview.png">
+
+    <link rel="icon" href="favicon.svg" type="image/svg+xml">
+    <link rel="icon" href="images/browser-tab-icon.png" type="image/png" sizes="48x48">
+    <link rel="apple-touch-icon" href="images/home-screen-icon.png">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500;1,600&family=Spectral:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+    <link href="style.css" rel="stylesheet">
+</head>
+
+<body>
+
+    <nav class="navbar navbar-expand-lg sticky-top" data-bs-theme="dark">
+        <div class="container">
+            <a class="navbar-brand" href="#home">Art<span>Space.</span></a>
+
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarMenu" aria-label="Toggle navigation" aria-controls="navbarMenu" aria-expanded="false">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarMenu">
+                <ul class="navbar-nav ms-auto gap-lg-3">
+                    <li class="nav-item"><a class="nav-link" href="#home">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#gallery">Explore Artworks</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+                    <li class="nav-item ms-lg-2"><a class="nav-back" href="../index.html"><span aria-hidden="true">&larr;</span> Back to portfolio</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <section class="hall" id="home">
+        <div class="container">
+            <div class="hall-head">
+                <h1>A quiet hall of masterworks</h1>
+                <p>Walk down the gallery, step up to a frame, and read the placard.</p>
+            </div>
+        </div>
+
+        <div class="stage" id="stage" aria-roledescription="carousel" aria-label="Featured artworks">
+            <div class="track" id="hallTrack"></div>
+        </div>
+
+        <div class="floor" aria-hidden="true"></div>
+
+        <div class="hall-base">
+            <div class="rope-row" aria-hidden="true">
+                <span class="post"></span><span class="rope"></span><span class="post"></span>
+            </div>
+            <div class="plaque">
+                <button class="nav-btn" onclick="goHall(hallIndex - 1)" aria-label="Previous artwork">&#8249;</button>
+                <div class="plaque-text">
+                    <div id="featuredTitle">Hanging the paintings</div>
+                    <div id="featuredArtist">The hall opens in a moment</div>
+                </div>
+                <button class="nav-btn" onclick="goHall(hallIndex + 1)" aria-label="Next artwork">&#8250;</button>
+            </div>
+            <button class="btn-brown" onclick="openHall()">Read the placard</button>
+            <button class="btn-line" id="tourBtn" onclick="toggleTour()">Pause tour</button>
+        </div>
+    </section>
+
+    <section class="daily" id="daily" aria-labelledby="dailyHeading" hidden>
+        <div class="container">
+            <div class="daily-grid">
+                <div class="daily-pic">
+                    <div class="frame walnut">
+                        <div class="mat">
+                            <img id="dailyImg" alt="">
+                        </div>
+                    </div>
+                </div>
+                <div class="daily-text">
+                    <h2 id="dailyHeading">Artwork of the Day</h2>
+                    <div class="daily-date" id="dailyDate"></div>
+                    <h3 id="dailyTitle"></h3>
+                    <p class="daily-artist" id="dailyArtist"></p>
+                    <p class="daily-meta" id="dailyMeta"></p>
+                    <button type="button" class="btn-brown" onclick="openDaily()">Read the placard</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="gallery" class="wall">
+        <div class="container">
+
+            <div class="gallery-heading">
+                <div class="gh-title">
+                    <h2 class="section-title mb-1" id="galleryTitle">Explore Artworks</h2>
+                    <p class="section-subtitle mb-0" id="resultCount">Discover artworks from around the world.</p>
+                </div>
+
+                <div class="toolbar">
+                    <div class="gallery-search" role="search">
+                        <img class="search-icon" src="images/search.png" alt="">
+                        <input type="text" id="searchInput" class="form-control" placeholder="Artist, subject, culture" aria-label="Search artworks"
+                            autocomplete="off">
+                        <button type="button" class="search-clear" id="searchClear" aria-label="Clear search" hidden>&times;</button>
+                        <button class="btn-brown" onclick="searchArt()">Search</button>
+                    </div>
+
+                    <div class="toolbar-actions">
+                    <button class="btn-brown" id="filtersBtn" onclick="toggleFilterPanel()" aria-expanded="false" aria-controls="filterPanel">
+                        Filters <span class="fav-count" id="filterCount" hidden>0</span>
+                    </button>
+
+                    <button class="btn-brown" id="randomBtn" onclick="randomArt()" title="Open a random work from the whole Met collection">Surprise Me</button>
+
+                    <button class="btn-brown" id="favBtn" onclick="toggleFavorites()">
+                        My Collection <span class="fav-count" id="favCount">0</span>
+                    </button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="collection-tools" id="collectionTools" hidden>
+                <button type="button" class="btn-line" id="shareBtn" onclick="shareCollection(this)" hidden>Copy share link</button>
+                <button type="button" class="btn-line" id="saveSharedBtn" onclick="saveSharedToCollection()" hidden>Save all to My Collection</button>
+            </div>
+
+            <div class="filter-panel" id="filterPanel" role="group" aria-label="Refine results" hidden>
+
+                <div class="fp-row">
+                    <label class="fp-label" for="categoryFilter">Category</label>
+                    <select id="categoryFilter" class="filter-select" onchange="applyFilters()">
+                        <option value="all">All Categories</option>
+                    </select>
+                </div>
+
+                <div class="fp-row">
+                    <span class="fp-label" id="eraLabel">Era</span>
+                    <div class="era-chips" id="eraChips" role="group" aria-labelledby="eraLabel">
+                        <button type="button" class="chip" data-from="" data-to="">Any time</button>
+                        <button type="button" class="chip" data-from="" data-to="500">Ancient</button>
+                        <button type="button" class="chip" data-from="500" data-to="1400">Medieval</button>
+                        <button type="button" class="chip" data-from="1400" data-to="1600">Renaissance</button>
+                        <button type="button" class="chip" data-from="1600" data-to="1799">1600s&ndash;1700s</button>
+                        <button type="button" class="chip" data-from="1800" data-to="1899">1800s</button>
+                        <button type="button" class="chip" data-from="1900" data-to="">1900s+</button>
+                    </div>
+                </div>
+
+                <div class="fp-row">
+                    <span class="fp-label">Custom years</span>
+                    <div class="year-range">
+                        <input type="number" id="yearFrom" inputmode="numeric" placeholder="From" aria-label="From year">
+                        <span aria-hidden="true">to</span>
+                        <input type="number" id="yearTo" inputmode="numeric" placeholder="To" aria-label="To year">
+                        <button type="button" class="btn-line" id="yearApply" onclick="applyFilters()">Go</button>
+                    </div>
+                    <span class="year-hint">Negative years are B.C. (e.g. -500)</span>
+                </div>
+
+                <div class="fp-row">
+                    <span class="fp-label">Show</span>
+                    <label class="check-pill" title="Only works the Met marks as highlights of its collection">
+                        <input type="checkbox" id="highlightToggle" onchange="applyFilters()">
+                        <span>Masterworks only</span>
+                    </label>
+                </div>
+
+                <div class="fp-row">
+                    <label class="fp-label" for="sortSelect">Sort this room</label>
+                    <select id="sortSelect" class="filter-select" onchange="changeSort()" aria-label="Sort this room" title="Sorts the works in the current room">
+                        <option value="relevance">Relevance</option>
+                        <option value="title">Title A&ndash;Z</option>
+                        <option value="artist">Artist A&ndash;Z</option>
+                        <option value="oldest">Oldest first</option>
+                        <option value="newest">Newest first</option>
+                    </select>
+                </div>
+
+                <button type="button" class="link-btn" id="clearFilters" onclick="clearFilters()" hidden>Clear filters</button>
+            </div>
+
+            <div class="salon" id="artContainer"></div>
+
+            <div id="emptyState" class="empty-state d-none">
+                <h4>No artworks found.</h4>
+                <p>Try searching for another artwork or artist.</p>
+                <button class="btn-brown" onclick="resetGallery()">Show All Artworks</button>
+            </div>
+
+        </div>
+
+        <div class="wainscot">
+            <nav><ul class="pagination" id="pagination"></ul></nav>
+        </div>
+        <div class="parquet" aria-hidden="true"><span class="bench"></span></div>
+    </section>
+
+    <section id="about" class="about-section">
+        <div class="container">
+            <div class="about-grid">
+                <div class="about-lead">
+                    <h2>Art is meant to be experienced.</h2>
+                    <p>
+                        ArtSpace is a digital gallery that makes it easier to walk through the
+                        public-domain collection of The Metropolitan Museum of Art. Every work shown
+                        here is in the public domain, and the details come from the Met's Collection API.
+                    </p>
+                </div>
+
+                <dl class="about-list">
+                    <div>
+                        <dt>Explore</dt>
+                        <dd>Search by artist, subject or culture, then narrow by category, era, or masterworks.</dd>
+                    </div>
+                    <div>
+                        <dt>Keep</dt>
+                        <dd>Tap the heart to save a work to My Collection. Your saves stay in this browser.</dd>
+                    </div>
+                    <div>
+                        <dt>Share</dt>
+                        <dd>Copy a link to one artwork, or to your whole collection.</dd>
+                    </div>
+                </dl>
+            </div>
+
+            <div class="about-stats" id="aboutStats" aria-label="The collection in numbers">
+                <div class="stat">
+                    <div class="stat-num" id="statPaintings" data-value="">&ndash;</div>
+                    <div class="stat-label">paintings with images you can browse</div>
+                </div>
+                <div class="stat">
+                    <div class="stat-num" id="statHighlights" data-value="">&ndash;</div>
+                    <div class="stat-label">masterworks the Met highlights</div>
+                </div>
+                <div class="stat">
+                    <div class="stat-num" id="statDepartments" data-value="">&ndash;</div>
+                    <div class="stat-label">curatorial departments to browse</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="modal fade" id="artModal" tabindex="-1" aria-labelledby="artModalTitle" aria-hidden="true">
+        <div class="modal-dialog modal-xl modal-dialog-centered modal-dialog-scrollable">
+            <div class="modal-content">
+                <div class="modal-header border-0">
+                    <h5 class="modal-title" id="artModalTitle">Artwork Details</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body" id="modalContent"></div>
+            </div>
+        </div>
+
+        <div class="lightbox" id="lightbox" hidden role="dialog" aria-modal="true" aria-label="Enlarged artwork" tabindex="-1">
+            <div class="lightbox-stage" id="lightboxStage">
+                <img id="lightboxImg" alt="" draggable="false">
+            </div>
+            <button type="button" class="lightbox-close" onclick="closeLightbox()" aria-label="Close image">&times;</button>
+            <p class="lightbox-hint">Scroll or pinch to zoom &middot; drag to pan &middot; double-click to zoom in</p>
+            <div class="lightbox-controls" role="group" aria-label="Zoom controls">
+                <button type="button" id="zoomOutBtn" aria-label="Zoom out">&minus;</button>
+                <span class="zoom-level" id="zoomLevel" aria-live="polite">100%</span>
+                <button type="button" id="zoomInBtn" aria-label="Zoom in">+</button>
+                <button type="button" id="zoomResetBtn">Reset</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="compareModal" tabindex="-1" aria-labelledby="compareTitle" aria-hidden="true">
+        <div class="modal-dialog modal-xl modal-dialog-centered modal-dialog-scrollable">
+            <div class="modal-content">
+                <div class="modal-header border-0">
+                    <h5 class="modal-title" id="compareTitle">Compare Artworks</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body" id="compareContent"></div>
+            </div>
+        </div>
+    </div>
+
+    <div class="compare-tray" id="compareTray" role="region" aria-label="Compare artworks" hidden>
+        <div class="tray-slots" id="traySlots"></div>
+        <div class="tray-actions">
+            <button type="button" class="btn-brown" id="compareGo" onclick="openCompare()" disabled>Compare</button>
+            <button type="button" class="btn-line" onclick="clearCompare()">Clear</button>
+        </div>
+    </div>
+
+    <div class="toast-wrap" id="toastWrap" role="status" aria-live="polite"></div>
+
+    <footer>
+        <div class="container footer-grid">
+            <div>
+                <div class="footer-brand">ArtSpace.</div>
+                <p class="mb-0">A digital gallery for art lovers.</p>
+            </div>
+            <nav class="footer-links" aria-label="Footer">
+                <a href="#home">Home</a>
+                <a href="#gallery">Explore Artworks</a>
+                <a href="#about">About</a>
+                <a href="../index.html">&larr; Back to portfolio</a>
+            </nav>
+            <p class="footer-credit mb-0">Artwork information provided by The Metropolitan Museum of Art Collection API.</p>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="script.js"></script>
+
+</body>
+
+</html>
